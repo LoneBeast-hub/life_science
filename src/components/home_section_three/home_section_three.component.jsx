@@ -25,7 +25,7 @@ const HomeSectionThree = () => {
                     </p>
                     {/* cta */}
                     <div className='w-fit md:self-end self-center'>
-                        <CTAButton path='/clients' whiteColored>See Our Clients</CTAButton>
+                        <CTAButton path='/clients' bgWhite>See Our Clients</CTAButton>
                     </div>
                 </div>
             </div>

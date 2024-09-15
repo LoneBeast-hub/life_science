@@ -1,8 +1,15 @@
 // images
 import FooterImg from '../../assets/footer_img.png';
 import CTAButton from '../cta_button/cta_button.component';
+// react icons
+import { FaTwitter, FaInstagram, FaLinkedinIn, FaSearch } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+// react hooks
+import { useState } from 'react';
 
 const Footer = () => {
+    const [searchValue, setSearchValue] = useState('');
+
     return(
         <div className="py-[6rem] bg-[#e0e0e080]">
             {/* adjuster */}
@@ -22,15 +29,27 @@ const Footer = () => {
                     </div>
                     {/* contact links */}
                     <div className='flex flex-col'>
-                        <CTAButton blackColored path='/contact_us'>Contact Us</CTAButton>
+                        <CTAButton bgBlack path='/contact_us'>Contact Us</CTAButton>
                         {/* links */}
-                        <div className="flex">
-
+                        <div className="flex mt-[3.5rem] justify-center gap-[0.5rem]">
+                            <FaTwitter className='text-[2rem]' />
+                            <FaInstagram className='text-[2rem]' />
+                            <FaLinkedinIn className='text-[2rem]' />
+                            <MdOutlineEmail className='text-[2rem]' />
                         </div>
                     </div>
                     {/* read whitepaper */}
                     <div className="flex flex-col">
-                        <CTAButton blackColored>read our whitepaper</CTAButton>
+                        <CTAButton bgBlack>read our whitepaper</CTAButton>
+                        {/* search */}
+                        <form className='mt-[2rem]' onSubmit={(e) => {e.preventDefault()}}>
+                            <div className='relative py-[1rem] px-[2rem] w-full border border-[#00000071]'>
+                                <input onChange={(e) => {
+                                    setSearchValue(e.target.value());
+                                }} defaultValue={searchValue} placeholder='Search' className='text-[1.5rem] bg-transparent' type="text" />
+                                <button type='submit'><FaSearch className='text-[1.2rem] absolute transform -translate-y-[50%] top-[50%] right-[7px]' /></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 {/* copyright */}

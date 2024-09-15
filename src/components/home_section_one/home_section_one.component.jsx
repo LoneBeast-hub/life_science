@@ -8,11 +8,11 @@ const HomeSectionOne = () => {
             <div className="bg-[#00000028] z-[0] w-full h-full absolute top-0"></div>
             {/* adjuster */}
             <div className="max-w-[1200px] relative z-[1] w-[90%] mx-auto py-[130px] lg:py-[240px]">
-                <div className='text-white h-fit'>
+                <div className='h-fit'>
                     {/* title */}
-                    <p className='text-[4rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.3rem]'>Unlocking Innovation in <span className='text-[#f67a20] text-[4rem] md:text-[4.8rem]'>Life Sciences and Medical Affairs</span></p>
+                    <p className='text-white text-[4rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.3rem]'>Unlocking Innovation in <span className='text-[#f67a20] text-[4rem] md:text-[4.8rem]'>Life Sciences and Medical Affairs</span></p>
                     {/* sub title */}
-                    <p className="text-[1.4rem] text-justify mt-[30px] md:text-[1.8rem] md:max-w-[60%]">
+                    <p className="text-white text-[1.4rem] text-justify mt-[30px] md:text-[1.8rem] md:max-w-[60%]">
                         At Top Elite Strategy Group, we help healthcare, biotech, 
                         and life science companies turn scientific innovation into 
                         actionable strategies. Our team of experts from <span className='text-[1.4rem] md:text-[1.8rem] font-bold'>life sciences, 
@@ -24,8 +24,8 @@ const HomeSectionOne = () => {
                     </p>
                     {/* buttons */}
                     <div className="flex gap-[2rem] mt-[20px]">
-                        <CTAButton path='/what_we_do' whiteColored>What We Do</CTAButton>
-                        <CTAButton path='/about_us'>About Us</CTAButton>
+                        <CTAButton path='/what_we_do' bgWhite>What We Do</CTAButton>
+                        <CTAButton path='/about_us' bgTransparent>About Us</CTAButton>
                     </div>
                 </div>
             </div>
