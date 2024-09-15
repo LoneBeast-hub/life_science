@@ -39,13 +39,13 @@ const Footer = () => {
                         </div>
                     </div>
                     {/* read whitepaper */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col items-center lg:items-end">
                         <CTAButton bgBlack>read our whitepaper</CTAButton>
                         {/* search */}
                         <form className='mt-[2rem]' onSubmit={(e) => {e.preventDefault()}}>
                             <div className='relative py-[1rem] px-[2rem] w-full border border-[#00000071]'>
                                 <input onChange={(e) => {
-                                    setSearchValue(e.target.value());
+                                    setSearchValue(e.target.value);
                                 }} defaultValue={searchValue} placeholder='Search' className='text-[1.5rem] bg-transparent' type="text" />
                                 <button type='submit'><FaSearch className='text-[1.2rem] absolute transform -translate-y-[50%] top-[50%] right-[7px]' /></button>
                             </div>
