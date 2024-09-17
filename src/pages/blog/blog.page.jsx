@@ -22,6 +22,12 @@ const BlogPage = () => {
                 {/* author */}
                 <p className='text-[1.4rem]'>BY {author.toUpperCase()}</p>
             </div>
+            {/* info adjuster */}
+            <div className='w-full lg:w-[80%] mx-auto'>
+                {/* info - I'm dangrously rendering the info so as to apply the "<br />"*/}
+                <p className="text-justify text-[1.4rem]" dangerouslySetInnerHTML={{__html: info}}>
+                </p>
+            </div>
         </div>
     )
 }
