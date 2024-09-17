@@ -54,7 +54,7 @@ const Footer = () => {
                 </div>
                 {/* copyright */}
                 <p className='text-[1.4rem] text-center mt-[2rem]'>
-                    Copyright Top Elite strategy group, a Herspiegel Company 2024
+                    Copyright Life & Med Tech Consulting, a Herspiegel Company 2024
                     {/* privacy policy */}
                 </p>
             </div>

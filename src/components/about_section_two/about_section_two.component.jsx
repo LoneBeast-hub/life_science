@@ -14,7 +14,7 @@ const AboutSectionTwo = () => {
                     <p className="text-[2.4rem] leading-[1.25] md:text-[3.7rem] font-bold">Our <span className="text-[2.4rem] md:text-[3.7rem] text-[#f67a20]">Mission</span></p>
                     {/* body */}
                     <p className="text-[1.8rem]">
-                        At Top Elite Strategy Group, we bring together a team of 
+                        At Life & Med Tech Consulting, we bring together a team of 
                         industry veterans with deep expertise in life sciences, 
                         medical sciences, engineering, business, and IT. This 
                         unique blend allows us to deliver customized, comprehensive 
@@ -55,7 +55,7 @@ const AboutSectionTwo = () => {
                         also ready to transform the future of healthcare.
                     </p>
                     {/* cta */}
-                    <CTAButton path='/clients' bgBlack>See Our Clients</CTAButton>
+                    <CTAButton path='/our_clients' bgBlack>See Our Clients</CTAButton>
                 </div>
             </div>
         </div>

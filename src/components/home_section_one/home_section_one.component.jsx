@@ -13,7 +13,7 @@ const HomeSectionOne = () => {
                     <p className='text-white text-[4rem] md:text-[4.8rem] font-bold leading-[1.15] tracking-[-0.3rem]'>Unlocking Innovation in <span className='text-[#f67a20] text-[4rem] md:text-[4.8rem]'>Life Sciences and Medical Affairs</span></p>
                     {/* sub title */}
                     <p className="text-white text-[1.4rem] text-justify mt-[30px] md:text-[1.8rem] md:max-w-[60%]">
-                        At Top Elite Strategy Group, we help healthcare, biotech, 
+                        At Life & Med Tech Consulting, we help healthcare, biotech, 
                         and life science companies turn scientific innovation into 
                         actionable strategies. Our team of experts from <span className='text-[1.4rem] md:text-[1.8rem] font-bold'>life sciences, 
                         medical sciences, engineering, business, and IT</span> is dedicated to 
