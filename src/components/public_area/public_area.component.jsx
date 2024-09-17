@@ -5,7 +5,6 @@ import WhatWeDoPage from "../../pages/what_we_do/what_we_do.page";
 import BlogsPage from "../../pages/blogs/blogs.page";
 import BlogPage from "../../pages/blog/blog.page";
 // components
-import Header from "../header/header.component";
 import Footer from "../footer/footer.component";
 // react router dom
 import { Route, Routes } from "react-router-dom";
@@ -15,8 +14,6 @@ const PublicArea = () => {
 
     return(
         <>
-            {/* Header */}
-            <Header />
             {/* Routes */}
             <Routes>
                 <Route path={baseRoute} exact element={<HomePage />} />

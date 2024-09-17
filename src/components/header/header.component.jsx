@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { FiMenu } from "react-icons/fi";
 import { LiaTimesSolid } from "react-icons/lia";
 
-const Header = () => {
+const Header = ({fixed}) => {
     const baseRoute = '/';
     const [isSticky, setIsSticky] = useState(false);
     const [showNav, setShowNav] = useState(false);
@@ -34,7 +34,7 @@ const Header = () => {
     }, []);
 
     return (
-        <div className={`w-full ${isSticky ? 'bg-black bg-opacity-90' : 'bg-transparent py-[1rem]'} fixed top-0 left-0 z-[999] transition-all duration-300 ease-in-out`}>
+        <div className={`w-full ${!fixed? isSticky ? 'bg-black bg-opacity-90' : 'bg-transparent py-[1rem]' : 'bg-black bg-opacity-90'} fixed top-0 left-0 z-[999] transition-all duration-300 ease-in-out`}>
             {/* adjuster */}
             <div className="max-w-[1200px] w-[90%] mx-auto py-[1rem]">
                 {/* flex */}
