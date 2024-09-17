@@ -27,7 +27,7 @@ const ContactSectionTwo = () => {
             
             {/* form and map */}
             <div className="flex flex-col md:flex-row mt-[40px] gap-[20px]">
-                <form className="w-1/2" onSubmit={handleSubmit}>
+                <form className="w-full md:w-1/2" onSubmit={handleSubmit}>
                     {/* heading */}
                     <p className="text-[2.4rem] font-bold text-[#5f5f5f] leading-[1.25] mb-[25px]">Get in touch with us</p>
                     <p className="text-[1.2rem] uppercase italic mb-[15px]">
@@ -61,7 +61,7 @@ const ContactSectionTwo = () => {
                 </form>
 
                 {/* map */}
-                <div className="w-1/2">
+                <div className="w-full md:w-1/2">
                     <p className="text-[1.6rem] text-[#5f5f5f] mb-[20px]">
                         Life & Med Tech Consulting<br />
                         38 Honeycrisp Crescent, Vaughan, Ontario, L4K 0M8<br />
