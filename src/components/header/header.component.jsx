@@ -1,7 +1,7 @@
 // images
 import Logo from '../../assets/logo.png';
 // react router dom
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 // react icons
 import { FiMenu } from "react-icons/fi";
@@ -11,6 +11,10 @@ const Header = () => {
     const baseRoute = '/';
     const [isSticky, setIsSticky] = useState(false);
     const [showNav, setShowNav] = useState(false);
+    const location = useLocation();
+    const isActiveLink = (path) => {
+        return location.pathname.startsWith(path);
+    };
 
     // Handle scroll event to make header sticky
     useEffect(() => {
@@ -45,7 +49,7 @@ const Header = () => {
                     <div className='hidden md:flex items-center text-white'>
                         <NavLink to='/about_us' className={({ isActive }) => isActive && location.pathname === '/about_us' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>About Us</span></NavLink>
                         <NavLink to='/what_we_do' className={({ isActive }) => isActive && location.pathname === '/what_we_do' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>What We Do</span></NavLink>
-                        <NavLink to='/blog' className={({ isActive }) => isActive && location.pathname === '/blog' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>Blog</span></NavLink>
+                        <NavLink to='/blogs' className={({ isActive }) => isActiveLink('/blogs')? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>Blogs</span></NavLink>
                         <NavLink to='/case_studies' className={({ isActive }) => isActive && location.pathname === '/case_studies' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>Case Studies</span></NavLink>
                         <NavLink to='/contact' className={({ isActive }) => isActive && location.pathname === '/contact' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>Contact</span></NavLink>
                     </div>
@@ -67,7 +71,7 @@ const Header = () => {
                 <div className='flex items-center flex-col mt-[80px] w-full'>
                     <NavLink to='/about_us' className={({ isActive }) => isActive && location.pathname === '/about_us' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>About Us</span></NavLink>
                     <NavLink to='/what_we_do' className={({ isActive }) => isActive && location.pathname === '/what_we_do' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>What We Do</span></NavLink>
-                    <NavLink to='/blog' className={({ isActive }) => isActive && location.pathname === '/blog' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Blog</span></NavLink>
+                    <NavLink to='/blogs' className={({ isActive }) => isActiveLink('/blogs')? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Blog</span></NavLink>
                     <NavLink to='/case_studies' className={({ isActive }) => isActive && location.pathname === '/case_studies' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Case Studies</span></NavLink>
                     <NavLink to='/contact' className={({ isActive }) => isActive && location.pathname === '/contact' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Contact</span></NavLink>
                 </div>
