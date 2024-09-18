@@ -23,7 +23,7 @@ const ContactSectionTwo = () => {
 
     return (
         <div className="max-w-[1200px] py-[40px] w-[90%] mx-auto">
-            <p className="text-[1.8rem]">Have questions? Fill out the form below and we'll get back to you.</p>
+            <p className="text-[1.8rem]">Interested in learning how we can support your life science, medical affairs, or regulatory needs? Fill the form below, We’re ready to partner with you.</p>
             
             {/* form and map */}
             <div className="flex flex-col md:flex-row mt-[40px] gap-[20px]">
