@@ -5,6 +5,8 @@ import WhatWeDoPage from "../../pages/what_we_do/what_we_do.page";
 import BlogsPage from "../../pages/blogs/blogs.page";
 import BlogPage from "../../pages/blog/blog.page";
 import ContactPage from "../../pages/contact/contact.page";
+import ClientsPage from "../../pages/clients/clients.page";
+
 // components
 import Footer from "../footer/footer.component";
 // react router dom
@@ -22,6 +24,7 @@ const PublicArea = () => {
                 <Route path="/what_we_do" element={<WhatWeDoPage />} />
                 <Route path="/blogs" element={<BlogsPage />} />
                 <Route path="/blogs/:id" element={<BlogPage />} />
+                <Route path="/clients" element={<ClientsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
             </Routes>
             {/* footer */}

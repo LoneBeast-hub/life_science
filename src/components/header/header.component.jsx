@@ -50,6 +50,7 @@ const Header = ({fixed}) => {
                         <NavLink to='/about_us' className={({ isActive }) => isActive && location.pathname === '/about_us' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>About Us</span></NavLink>
                         <NavLink to='/what_we_do' className={({ isActive }) => isActive && location.pathname === '/what_we_do' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>What We Do</span></NavLink>
                         <NavLink to='/blogs' className={({ isActive }) => isActiveLink('/blogs')? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>Blogs</span></NavLink>
+                        <NavLink to='/clients' className={({ isActive }) => isActive && location.pathname === '/clients' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>Clients</span></NavLink>
                         <NavLink to='/contact' className={({ isActive }) => isActive && location.pathname === '/contact' ? 'active_link' : 'not_active_link border border-transparent px-[2rem] hover:text-[#c4c4c4b0] py-[1rem]'}><span className='text-[1.2rem]'>Contact</span></NavLink>
                     </div>
                     {/* Menu icon */}
@@ -71,7 +72,7 @@ const Header = ({fixed}) => {
                     <NavLink to='/about_us' className={({ isActive }) => isActive && location.pathname === '/about_us' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>About Us</span></NavLink>
                     <NavLink to='/what_we_do' className={({ isActive }) => isActive && location.pathname === '/what_we_do' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>What We Do</span></NavLink>
                     <NavLink to='/blogs' className={({ isActive }) => isActiveLink('/blogs')? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Blog</span></NavLink>
-                    <NavLink to='/case_studies' className={({ isActive }) => isActive && location.pathname === '/case_studies' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Case Studies</span></NavLink>
+                    <NavLink to='/clients' className={({ isActive }) => isActive && location.pathname === '/clients' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Clients</span></NavLink>
                     <NavLink to='/contact' className={({ isActive }) => isActive && location.pathname === '/contact' ? 'active_link' : 'not_active_link'}><span className='text-[1.2rem]'>Contact</span></NavLink>
                 </div>
             </div>

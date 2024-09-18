@@ -55,7 +55,7 @@ const AboutSectionTwo = () => {
                         also ready to transform the future of healthcare.
                     </p>
                     {/* cta */}
-                    <CTAButton path='/our_clients' bgBlack>See Our Clients</CTAButton>
+                    <CTAButton path='/clients' bgBlack>See Our Clients</CTAButton>
                 </div>
             </div>
         </div>
