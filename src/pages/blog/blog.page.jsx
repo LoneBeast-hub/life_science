@@ -1,13 +1,29 @@
 // react router
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 // components
 import Header from "../../components/header/header.component";
+import { useEffect } from 'react';
 
 const BlogPage = () => {
     const location = useLocation();
+    const navigate = useNavigate();
+    
+    // Check if location.state is missing or empty
+    useEffect(() => {
+        if (!location.state || !location.state.imgUrl || !location.state.author || !location.state.date || !location.state.title) {
+            // If state is missing or incomplete, redirect to 404 page
+            navigate('/404', { replace: true });
+        }
+    }, [location.state, navigate]);
+
+    // Destructure state only after verifying it exists
+    if (!location.state) {
+        return null; // To avoid rendering if the state is being checked
+    }
+    
     const { imgUrl, author, date, info, title } = location.state;
 
-    return(
+    return (
         <>
             {/* Header */}
             <Header fixed />
@@ -29,13 +45,12 @@ const BlogPage = () => {
                 </div>
                 {/* info adjuster */}
                 <div className='w-full lg:w-[80%] mx-auto'>
-                    {/* info - I'm dangrously rendering the info so as to apply the "<br />"*/}
-                    <p className="text-justify text-[1.4rem]" dangerouslySetInnerHTML={{__html: info}}>
-                    </p>
+                    {/* info - I'm dangerously rendering the info so as to apply the "<br />" */}
+                    <p className="text-justify text-[1.4rem]" dangerouslySetInnerHTML={{__html: info}}></p>
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default BlogPage;

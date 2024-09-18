@@ -6,6 +6,7 @@ import BlogsPage from "../../pages/blogs/blogs.page";
 import BlogPage from "../../pages/blog/blog.page";
 import ContactPage from "../../pages/contact/contact.page";
 import ClientsPage from "../../pages/clients/clients.page";
+import PublicNotFoundPage from "../../pages/public_not_found/public_not_found.page";
 
 // components
 import Footer from "../footer/footer.component";
@@ -26,6 +27,9 @@ const PublicArea = () => {
                 <Route path="/blogs/:id" element={<BlogPage />} />
                 <Route path="/clients" element={<ClientsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+
+                {/* Catch-all route for non-existent pages */}
+                <Route path="*" element={<PublicNotFoundPage />} />
             </Routes>
             {/* footer */}
             <Footer />
