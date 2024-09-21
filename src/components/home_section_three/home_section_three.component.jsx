@@ -15,7 +15,7 @@ const HomeSectionThree = () => {
                 {/* right */}
                 <div className='md:max-w-[60%] flex flex-col gap-[3rem]'>
                     {/* heading */}
-                    <p className='text-[2.4rem] text-center md:text-right md:text-[3.7rem] font-bold text-white'>Our Sweetspot</p>
+                    <p className='text-[2.4rem] text-center md:text-right md:text-[3.7rem] font-bold text-white'>Our Target Customers</p>
                     {/* body */}
                     <p className='text-[1.6rem] text-white text-center md:text-right'>
                         We work with a breadth of clients.  our sweetspot 

@@ -63,7 +63,7 @@ const ContactSectionTwo = () => {
                 {/* map */}
                 <div className="w-full md:w-1/2">
                     <p className="text-[1.6rem] text-[#5f5f5f] mb-[20px]">
-                        Life & Med Tech Consulting<br />
+                        Life & MedTech Consulting<br />
                         38 Honeycrisp Crescent, Vaughan, Ontario, L4K 0M8<br />
                         (437) 410-2473<br />
                         porchlyt@gmail.com<br />

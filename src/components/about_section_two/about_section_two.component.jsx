@@ -14,7 +14,7 @@ const AboutSectionTwo = () => {
                     <p className="text-[2.4rem] leading-[1.25] md:text-[3.7rem] font-bold">Our <span className="text-[2.4rem] md:text-[3.7rem] text-[#f67a20]">Mission</span></p>
                     {/* body */}
                     <p className="text-[1.8rem]">
-                        At Life & Med Tech Consulting, we bring together a team of 
+                        At Life & MedTech Consulting, we bring together a team of 
                         industry veterans with deep expertise in life sciences, 
                         medical sciences, engineering, business, and IT. This 
                         unique blend allows us to deliver customized, comprehensive 
@@ -46,13 +46,13 @@ const AboutSectionTwo = () => {
                     <p className="text-[2.4rem] leading-[1.25] md:text-[3.7rem] font-bold">Our <span className="text-[2.4rem] md:text-[3.7rem] text-[#f67a20]">Focus</span></p>
                     {/* body */}
                     <p className="text-[1.8rem]">
-                        Our team’s interdisciplinary knowledge and commitment to excellence ensure 
-                        that we can tackle the most complex challenges, from navigating regulatory 
-                        landscapes to providing top-tier medical writing that supports your clinical 
-                        and marketing goals.
+                        Our team’s interdisciplinary knowledge and commitment to excellence 
+                        ensure that we can tackle the most complex challenges, from medical 
+                        device development and navigating regulatory landscapes to providing 
+                        top-tier medical writing that supports your clinical and marketing goals. 
                         <br/>
-                        Together, we make sure your projects are not only compliant and efficient but 
-                        also ready to transform the future of healthcare.
+                        Together, we make sure your projects are not only compliant and efficient 
+                        but also ready to transform the future of healthcare.
                     </p>
                     {/* cta */}
                     <CTAButton path='/clients' bgBlack>See Our Clients</CTAButton>

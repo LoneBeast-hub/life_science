@@ -12,6 +12,11 @@
     scroll-behavior: smooth;
 }
 
+.active_dashboard_link {
+    background-color: black !important;
+    color: white !important;
+}
+
 /* responsiveness */
 /* for screens up to 767px */
 @media screen and (max-width: 767px) {

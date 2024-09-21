@@ -1,5 +1,5 @@
 // images
-import FooterImg from '../../assets/footer_img.png';
+// import FooterImg from '../../assets/footer_img.png';
 import CTAButton from '../cta_button/cta_button.component';
 // react icons
 import { FaTwitter, FaInstagram, FaLinkedinIn, FaSearch } from "react-icons/fa";
@@ -11,13 +11,13 @@ const Footer = () => {
     const [searchValue, setSearchValue] = useState('');
 
     return(
-        <div className="py-[6rem] bg-[#e0e0e080]">
+        <div className="pb-[6rem] bg-[#e0e0e080]">
             {/* adjuster */}
             <div className="max-w-[1200px] w-[90%] mx-auto">
                 {/* img */}
-                <img className='w-full' src={FooterImg} alt="Partnership" />
+                {/* <img className='w-full' src={FooterImg} alt="Partnership" /> */}
                 {/* contact section */}
-                <div className='flex border-t items-center lg:flex-row border-b mt-[5rem] py-[2rem] border-[#00000021] flex-col gap-[2rem] justify-between'>
+                <div className='flex items-center lg:flex-row border-b py-[2rem] border-[#00000021] flex-col gap-[2rem] justify-between'>
                     {/* contact details */}
                     <div className='flex flex-col gap-[1rem] text-center lg:text-left'>
                         {/* address */}
@@ -40,7 +40,7 @@ const Footer = () => {
                     </div>
                     {/* read whitepaper */}
                     <div className="flex flex-col items-center lg:items-end">
-                        <CTAButton bgBlack>read our whitepaper</CTAButton>
+                        <CTAButton bgBlack>Read Our Scientific Breakthroughs</CTAButton>
                         {/* search */}
                         <form className='mt-[2rem]' onSubmit={(e) => {e.preventDefault()}}>
                             <div className='relative py-[1rem] px-[2rem] w-full border border-[#00000071]'>
@@ -54,7 +54,7 @@ const Footer = () => {
                 </div>
                 {/* copyright */}
                 <p className='text-[1.4rem] text-center mt-[2rem]'>
-                    Copyright Life & Med Tech Consulting, a Herspiegel Company 2024
+                    Copyright Life & MedTech Consulting, a Herspiegel Company 2024
                     {/* privacy policy */}
                 </p>
             </div>
