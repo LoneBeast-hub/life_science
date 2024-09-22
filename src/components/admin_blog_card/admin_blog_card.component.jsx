@@ -10,10 +10,10 @@ const AdminBlogCard = ({imgUrl, date, author, title, info, id}) => {
         <div className="bg-cover bg-no-repeat pt-[40%] rounded-[30px] pb-[30px] relative z-0" style={AdminblogCardStyle}>
             {/* edit and delete actions */}
             <div className="absolute top-[20px] right-[20px] flex gap-[5px]">
-                <div className="bg-white text-black p-[5px] rounded-xl">
+                <div className="bg-white cursor-pointer text-black p-[5px] rounded-xl">
                     <MdEdit className="text-[1.8rem]" />
                 </div>
-                <div className="bg-white text-black p-[5px] rounded-xl">
+                <div className="bg-white cursor-pointer text-black p-[5px] rounded-xl">
                     <MdDelete className="text-[1.8rem]" />
                 </div>
             </div>
