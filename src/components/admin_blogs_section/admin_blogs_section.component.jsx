@@ -98,7 +98,7 @@ const AdminBlogsSection = () => {
 
       {filteredBlogs.length ? (
         <div className="grid gap-[25px] lg:grid-cols-2 grid-cols-1">
-          {filteredBlogs.map(({ imgUrl, date, author, title, info, id }, index) => (
+          {filteredBlogs.map(({ imgUrl, date, author, title, info, id, imgPath }, index) => (
             <AdminBlogCard
               key={index}
               imgUrl={imgUrl}
@@ -107,6 +107,7 @@ const AdminBlogsSection = () => {
               title={title}
               id={id}
               info={info}
+              imgPath={imgPath}
             />
           ))}
         </div>

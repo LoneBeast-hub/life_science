@@ -1,14 +1,40 @@
 // component
 import DashboardHeader from "../../components/dashboard_header/dashboard_header.component";
 // react and context api
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MyContext } from "../../App";
 import { FaPlus } from "react-icons/fa";
 import AdminBlogsSection from "../../components/admin_blogs_section/admin_blogs_section.component";
+// firebase
+import { db } from "../../firebase/firebase";
+import { collection, onSnapshot } from "firebase/firestore";
 
 const AdminBlogsPage = () => {
     const {setContextState} = useContext(MyContext);
     const adminDashboardRoute = '/admin_dashboard';
+
+    useEffect(() => {
+        // Reference the 'blogs' collection in Firebase
+        const blogsCollectionRef = collection(db, "blogs");
+
+        // Subscribe to changes in the blogs collection
+        const unsubscribe = onSnapshot(blogsCollectionRef, (snapshot) => {
+            const blogsArray = snapshot.docs.map((doc) => ({
+                id: doc.id, // Firebase assigns an ID to each document
+                ...doc.data(), // Spread other document data (imgUrl, date, author, category, title, info)
+            }));
+
+            // Update the context state with the new blogs data
+            setContextState((prevValues) => ({
+                ...prevValues,
+                blogsData: blogsArray
+            }));
+        });
+
+        // Cleanup subscription on component unmount
+        return () => unsubscribe();
+    }, [setContextState])
+
     return(
         <div>
             {/* header */}

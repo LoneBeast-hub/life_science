@@ -1,7 +1,11 @@
 // react icons
 import { MdEdit, MdDelete } from "react-icons/md";
+// context API
+import { MyContext } from "../../App";
+import { useContext } from "react";
 
-const AdminBlogCard = ({imgUrl, date, author, title, info, id}) => {
+const AdminBlogCard = ({imgUrl, date, author, title, info, id, imgPath}) => {
+    const {setContextState} = useContext(MyContext);
     // blog card style
     const AdminblogCardStyle = {
         backgroundImage: `url(${imgUrl})`
@@ -14,7 +18,16 @@ const AdminBlogCard = ({imgUrl, date, author, title, info, id}) => {
                     <MdEdit className="text-[1.8rem]" />
                 </div>
                 <div className="bg-white cursor-pointer text-black p-[5px] rounded-xl">
-                    <MdDelete className="text-[1.8rem]" />
+                    <MdDelete onClick={() => {
+                        setContextState((prevValues) => ({
+                            ...prevValues,
+                            showDeleteBlogModal: true,
+                            blogToDelete: {
+                                id, // id of blog to delete
+                                imgPath // path of blog image to delete
+                            }
+                        }));
+                    }}  className="text-[1.8rem]" />
                 </div>
             </div>
             {/* card content */}
