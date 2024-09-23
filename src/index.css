@@ -63,3 +63,36 @@
         color: #c4c4c4b0;
     } 
 }
+
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+  }
+  
+  .pagination li a {
+    padding: 10px 15px;
+    border: 1px solid #bababa;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .pagination .active a {
+    background-color: #000;
+    color: white;
+    border: 1px solid black;
+  }
+  

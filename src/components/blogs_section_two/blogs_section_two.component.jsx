@@ -4,6 +4,7 @@ import { MyContext } from '../../App';
 import { DateRangePicker } from 'react-date-range';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween'; // Correct import for 'isBetween' plugin
+import ReactPaginate from 'react-paginate';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import './blogs_section_two.style.css';
@@ -24,6 +25,11 @@ const BlogsSectionTwo = () => {
   ]);
   const [showDateRangePicker, setShowDateRangePicker] = useState(false); // For toggling the date picker
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(0);
+  const blogsPerPage = 6; // Number of blogs per page
+
+  // Update filtered blogs based on search, category, and date range
   useEffect(() => {
     const filtered = contextState.blogsData.filter((blog) => {
       const inDateRange = dayjs(blog.date).isBetween(
@@ -43,7 +49,19 @@ const BlogsSectionTwo = () => {
     });
 
     setFilteredBlogs(filtered);
+    setCurrentPage(0); // Reset to first page on filter change
   }, [searchTerm, category, dateRange, contextState.blogsData]);
+
+  // Get blogs for the current page
+  const pageCount = Math.ceil(filteredBlogs.length / blogsPerPage);
+  const displayedBlogs = filteredBlogs.slice(
+    currentPage * blogsPerPage,
+    (currentPage + 1) * blogsPerPage
+  );
+
+  const handlePageClick = (data) => {
+    setCurrentPage(data.selected);
+  };
 
   const handleDateChange = (ranges) => {
     setDateRange([ranges.selection]);
@@ -51,65 +69,81 @@ const BlogsSectionTwo = () => {
 
   return (
     <div className="max-w-[1200px] py-[4rem] w-[90%] mx-auto">
-        {/* filters */}
-        <div className="relative flex gap-[5px] flex-wrap mb-[20px]">
-            <input
-            type="text"
-            placeholder="Search blogs..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="text-[1.5rem] border py-[5px] px-[10px] border-[#bababa] bg-white"
-            />
+      {/* filters */}
+      <div className="relative flex gap-[5px] flex-wrap mb-[20px]">
+        <input
+          type="text"
+          placeholder="Search blogs..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="text-[1.5rem] border py-[5px] px-[10px] border-[#bababa] bg-white"
+        />
 
-            <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="text-[1.5rem] border py-[5px] px-[10px] border-[#bababa] bg-white"
-            >
-            <option className='text-[1.5rem]' value="All">All</option>
-            <option className='text-[1.5rem]' value="Industry trends">Industry trends</option>
-            <option className='text-[1.5rem]' value="Our research">Our research</option>
-            </select>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="text-[1.5rem] border py-[5px] px-[10px] border-[#bababa] bg-white"
+        >
+          <option className='text-[1.5rem]' value="All">All</option>
+          <option className='text-[1.5rem]' value="Industry trends">Industry trends</option>
+          <option className='text-[1.5rem]' value="Our research">Our research</option>
+        </select>
 
-            <div>
-                <button
-                className="border border-[#bababa] text-[1.6rem] py-[5px] px-[10px] bg-white"
-                onClick={() => setShowDateRangePicker(!showDateRangePicker)}
-                >
-                Date {showDateRangePicker ? '▲' : '▼'}
-                </button>
+        <div>
+          <button
+            className="border border-[#bababa] text-[1.6rem] py-[5px] px-[10px] bg-white"
+            onClick={() => setShowDateRangePicker(!showDateRangePicker)}
+          >
+            Date {showDateRangePicker ? '▲' : '▼'}
+          </button>
 
-                {showDateRangePicker && (
-                <div className="custom-date-range-picker left-[50%] transform -translate-x-[50%] absolute z-10 bg-white shadow-lg">
-                    <DateRangePicker
-                    ranges={dateRange}
-                    onChange={handleDateChange}
-                    className="date-range-picker"
-                    />
-                </div>
-                )}
+          {showDateRangePicker && (
+            <div className="custom-date-range-picker left-[50%] transform -translate-x-[50%] absolute z-10 bg-white shadow-lg">
+              <DateRangePicker
+                ranges={dateRange}
+                onChange={handleDateChange}
+                className="date-range-picker"
+              />
             </div>
+          )}
         </div>
-        {
-            filteredBlogs.length?
-                <div className="grid gap-[25px] lg:grid-cols-2 grid-cols-1">  
-                    {filteredBlogs.map(({ imgUrl, date, author, title, info, id }, index) => (
-                    <BlogCard
-                        key={index}
-                        imgUrl={imgUrl}
-                        date={date}
-                        author={author}
-                        title={title}
-                        info={info}
-                        id={id}
-                    />
-                    ))}
-                </div>
-            :
-                <div className='text-center w-full'>
-                    <p className="text-[3rem]">No Blogs</p>
-                </div>
-        }
+      </div>
+
+      {/* Blogs Section */}
+      {displayedBlogs.length ? (
+        <div className="grid gap-[25px] lg:grid-cols-2 grid-cols-1">
+          {displayedBlogs.map(({ imgUrl, date, author, title, info, id }, index) => (
+            <BlogCard
+              key={index}
+              imgUrl={imgUrl}
+              date={date}
+              author={author}
+              title={title}
+              info={info}
+              id={id}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className='text-center w-full'>
+          <p className="text-[3rem]">No Blogs</p>
+        </div>
+      )}
+
+      {/* Pagination Controls */}
+      {filteredBlogs.length > blogsPerPage && (
+        <ReactPaginate
+          previousLabel={'<'}
+          nextLabel={'>'}
+          breakLabel={'...'}
+          pageCount={pageCount}
+          marginPagesDisplayed={1}
+          pageRangeDisplayed={2}
+          onPageChange={handlePageClick}
+          containerClassName={'pagination'}
+          activeClassName={'active'}
+        />
+      )}
     </div>
   );
 };
