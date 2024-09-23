@@ -27,7 +27,7 @@ const Footer = () => {
                         {/* phone */}
                         <p className='text-[1.2rem]'>(437) 410-2473</p>
                         {/* email */}
-                        <p className='text-[1.2rem]'>porchlyt@gmail.com</p>
+                        <p className='text-[1.2rem]'>contact@lifeandmedtech.com</p>
                     </div>
                     {/* contact links */}
                     <div className='flex flex-col'>
@@ -63,7 +63,7 @@ const Footer = () => {
                 </div>
                 {/* copyright */}
                 <p className='text-[1.4rem] text-center mt-[2rem]'>
-                    Copyright Life & MedTech Consulting, a Herspiegel Company 2024
+                    Copyright &copy; 2024 Life & MedTech Consulting. All Rights Reserved
                     {/* privacy policy */}
                 </p>
             </div>

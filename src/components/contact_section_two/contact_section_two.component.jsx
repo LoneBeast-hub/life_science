@@ -17,7 +17,7 @@ const ContactSectionTwo = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const mailtoLink = `mailto:porchlyt@gmail.com?subject=Contact Form Submission&body=Name: ${formData.first_name} ${formData.last_name}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
+        const mailtoLink = `mailto:contact@lifeandmedtech.com?subject=Contact Form Submission&body=Name: ${formData.first_name} ${formData.last_name}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
         window.location.href = mailtoLink;
     };
 
@@ -66,7 +66,7 @@ const ContactSectionTwo = () => {
                         Life & MedTech Consulting<br />
                         38 Honeycrisp Crescent, Vaughan, Ontario, L4K 0M8<br />
                         (437) 410-2473<br />
-                        porchlyt@gmail.com<br />
+                        contact@lifeandmedtech.com<br />
                     </p>
 
                     {/* Embed Google Maps */}

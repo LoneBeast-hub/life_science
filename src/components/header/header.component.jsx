@@ -42,7 +42,7 @@ const Header = ({fixed}) => {
                     {/* logo */}
                     <div>
                         <Link to={baseRoute}>
-                            <img src={Logo} className='max-h-[60px]' alt="Logo" />
+                            <img src={Logo} className='max-h-[90px]' alt="Logo" />
                         </Link>
                     </div>
                     {/* desktop nav links */}

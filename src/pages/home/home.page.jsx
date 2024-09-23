@@ -12,7 +12,7 @@ const HomePage = () => {
             <Header />
             <HomeSectionOne />
             <HomeSectionTwo />
-            <HomeSectionThree />
+            {/* <HomeSectionThree /> */}
             <HomeSectionFour />
         </div>
     )
