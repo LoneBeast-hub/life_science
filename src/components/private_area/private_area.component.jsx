@@ -7,12 +7,17 @@ import Logo from '../../assets/logo_black.png';
 import { FaFolderOpen, FaHome } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
 // react router
-import { NavLink, Link, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route, useNavigate } from "react-router-dom";
 import AdminBlogsPage from "../../pages/admin_blogs/admin_blogs.page";
+import ProtectedRoute from "../protected_route/protected_route.component";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
+import AdminDashboard from "../../pages/admin_dashboard/admin_dashboard.page";
 
 const PrivateArea = () => {
     const {contextState, setContextState} = useContext(MyContext);
     const adminDashboardRoute = '/admin_dashboard';
+    const navigate = useNavigate();
     return(
         <div>
             <div className="flex w-full">
@@ -40,7 +45,15 @@ const PrivateArea = () => {
                         </div>
                     </div>
                     {/* logout */}
-                    <Link to='/' className="absolute bottom-[7.2rem] left-[3.6rem] font-medium gap-[1rem] flex items-center text-black-2"><AiOutlineLogout className="text-[2rem] transform -rotate-90" /> <span className="text-[2rem]">Logout</span></Link>
+                    <button onClick={async () => {
+                        try {
+                            await signOut(auth);
+                            alert('Admin signed out successfully!');
+                            navigate('/admin_auth');
+                        } catch (error) {
+                            alert(error.message)
+                        }
+                    }} className="absolute bottom-[7.2rem] left-[3.6rem] font-medium gap-[1rem] flex items-center text-black-2"><AiOutlineLogout className="text-[2rem] transform -rotate-90" /> <span className="text-[2rem]">Logout</span></button>
                 </div>
                 {/* sidebar frame */}
                 <div className="min-w-[263px] min-h-[100vh] hidden lg:flex"></div>
@@ -56,8 +69,8 @@ const PrivateArea = () => {
                 }} className="w-full pb-[2.4rem]">
                     {/* Routes */}
                     <Routes>
-                        {/* <Route path={adminDashboardRoute} exact element={<MembersDashboardPage />} /> */}
-                        <Route path={`${adminDashboardRoute}/blogs`} element={<AdminBlogsPage />} />
+                        <Route path={adminDashboardRoute} exact element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+                        <Route path={`${adminDashboardRoute}/blogs`} element={<ProtectedRoute><AdminBlogsPage /></ProtectedRoute>} />
                     </Routes>
                 </div>
             </div>
