@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 // components
 import AddBlogModal from "./components/add_blog_modal/add_blog_modal.component";
 import DeleteBlogModal from "./components/delete_blog_modal/delete_blog_modal.component";
+import EditBlogModal from "./components/edit_blog_modal/edit_blog_modal.component";
 
 export const MyContext = createContext();
 
@@ -13,7 +14,9 @@ function App() {
     showNav: false,
     showAddBlogModal: false,
     showDeleteBlogModal: false,
+    showEditBlogModal: false,
     blogToDelete: null,
+    blogToEdit: null,
     blogsData: []
   });
 
@@ -28,6 +31,8 @@ function App() {
             {contextState.showAddBlogModal? <AddBlogModal /> : ''}
             {/* Delete Blog Modal */}
             {contextState.showDeleteBlogModal? <DeleteBlogModal /> : ''}
+            {/* Edit Blog Modal */}
+            {contextState.showEditBlogModal? <EditBlogModal /> : ''}
           </>
         :
           <PublicArea />

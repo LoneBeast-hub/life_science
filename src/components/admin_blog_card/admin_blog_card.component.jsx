@@ -4,7 +4,7 @@ import { MdEdit, MdDelete } from "react-icons/md";
 import { MyContext } from "../../App";
 import { useContext } from "react";
 
-const AdminBlogCard = ({imgUrl, date, author, title, info, id, imgPath}) => {
+const AdminBlogCard = ({imgUrl, date, author, title, info, id, imgPath, category}) => {
     const {setContextState} = useContext(MyContext);
     // blog card style
     const AdminblogCardStyle = {
@@ -15,7 +15,22 @@ const AdminBlogCard = ({imgUrl, date, author, title, info, id, imgPath}) => {
             {/* edit and delete actions */}
             <div className="absolute top-[20px] right-[20px] flex gap-[5px]">
                 <div className="bg-white cursor-pointer text-black p-[5px] rounded-xl">
-                    <MdEdit className="text-[1.8rem]" />
+                    <MdEdit onClick={() => {
+                        setContextState((prevValues) => ({
+                            ...prevValues,
+                            showEditBlogModal: true,
+                            blogToEdit: {
+                                id,
+                                imgUrl,
+                                date,
+                                author,
+                                title,
+                                info,
+                                imgPath,
+                                category
+                            }
+                        }));
+                    }} className="text-[1.8rem]" />
                 </div>
                 <div className="bg-white cursor-pointer text-black p-[5px] rounded-xl">
                     <MdDelete onClick={() => {
