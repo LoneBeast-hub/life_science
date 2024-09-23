@@ -17,6 +17,7 @@ function App() {
     showEditBlogModal: false,
     blogToDelete: null,
     blogToEdit: null,
+    selectedCategory: 'All',
     blogsData: []
   });
 

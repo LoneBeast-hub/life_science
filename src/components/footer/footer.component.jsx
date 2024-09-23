@@ -4,10 +4,12 @@ import CTAButton from '../cta_button/cta_button.component';
 // react icons
 import { FaTwitter, FaInstagram, FaLinkedinIn, FaSearch } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-// react hooks
-import { useState } from 'react';
+// react hooks and context api
+import { useState, useContext } from 'react';
+import { MyContext } from '../../App';
 
 const Footer = () => {
+    const {setContextState} = useContext(MyContext);
     const [searchValue, setSearchValue] = useState('');
 
     return(
@@ -29,7 +31,7 @@ const Footer = () => {
                     </div>
                     {/* contact links */}
                     <div className='flex flex-col'>
-                        <CTAButton bgBlack path='/contact_us'>Contact Us</CTAButton>
+                        <CTAButton bgBlack path='/contact'>Contact Us</CTAButton>
                         {/* links */}
                         <div className="flex mt-[3.5rem] justify-center gap-[0.5rem]">
                             <FaTwitter className='text-[2rem]' />
@@ -40,7 +42,14 @@ const Footer = () => {
                     </div>
                     {/* read whitepaper */}
                     <div className="flex flex-col items-center lg:items-end">
-                        <CTAButton bgBlack>Read Our Scientific Breakthroughs</CTAButton>
+                        <CTAButton path='/blogs' clickFunction={() => {
+                            setContextState((prevValues) => {
+                                return(({
+                                    ...prevValues,
+                                    selectedCategory: 'Our research'
+                                }))
+                            })
+                        }} bgBlack>Read Our Scientific Breakthroughs</CTAButton>
                         {/* search */}
                         <form className='mt-[2rem]' onSubmit={(e) => {e.preventDefault()}}>
                             <div className='relative py-[1rem] px-[2rem] w-full border border-[#00000071]'>

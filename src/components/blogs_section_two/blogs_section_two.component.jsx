@@ -14,7 +14,7 @@ const BlogsSectionTwo = () => {
   const { contextState } = useContext(MyContext);
   const [filteredBlogs, setFilteredBlogs] = useState(contextState.blogsData);
   const [searchTerm, setSearchTerm] = useState('');
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState(contextState.selectedCategory);
   const [dateRange, setDateRange] = useState([
     {
       startDate: new Date(2000, 0, 1), // Default start date
