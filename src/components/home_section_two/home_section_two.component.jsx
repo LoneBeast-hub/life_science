@@ -91,7 +91,7 @@ const HomeSectionTwo = () => {
                     {/* text info */}
                     <div className="flex flex-col gap-[2rem] md:w-1/2">
                         {/* heading */}
-                        <p className="text-[3rem] font-medium md:text-left text-center leading-[1]">Medical and scientific communications</p>
+                        <p className="text-[3rem] font-medium md:text-left text-center leading-[1]">Medical and Scientific Communications</p>
                         {/* body */}
                         <p className="text-[1.4rem] md:text-left text-justify">
                             Medical & Scientific Communications leverages expert knowledge 

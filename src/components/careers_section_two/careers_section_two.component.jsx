@@ -47,7 +47,7 @@ const CareersSectionTwo = () => {
                     {/* heading */}
                     <p className="text-[2.4rem] mb-[20px] leading-[1.25] md:text-[3.7rem] font-bold">Our<span className="text-[2.4rem] md:text-[3.7rem] text-[#f67a20]"> Open positions</span></p>
                     {/* body */}
-                    <p className='text-[1.8rem]'>For more information, visit our <a target='_blank' className='underline text-[1.8rem]' href="https://www.linkedin.com/in/lifeandmedtech-inc-18211b32b/">LinkedIn Page</a></p>
+                    <p className='text-[1.8rem]'>For more information, visit our <a target='_blank' className='underline text-[1.8rem]' href="https://www.linkedin.com/company/lifeandmedtech">LinkedIn Page</a></p>
                 </div>
             </div>
         </div>

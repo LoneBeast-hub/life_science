@@ -36,7 +36,7 @@ const Footer = () => {
                         <div className="flex mt-[3.5rem] justify-center gap-[0.5rem]">
                             <a target='_blank' href="https://x.com/lifeandmedtech"><FaTwitter className='text-[2rem]' /></a>
                             <a target='_blank' href="https://www.instagram.com/lifeandmedtech/?utm_source=ig_web_button_share_sheet"><FaInstagram className='text-[2rem]' /></a>
-                            <a target='_blank' href="https://www.linkedin.com/in/lifeandmedtech-inc-18211b32b/"><FaLinkedinIn className='text-[2rem]' /></a>
+                            <a target='_blank' href="https://www.linkedin.com/company/lifeandmedtech"><FaLinkedinIn className='text-[2rem]' /></a>
                             <a href="mailto:contact@lifeandmedtech.com"><MdOutlineEmail className='text-[2rem]' /></a>
                         </div>
                     </div>
