@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children }) => {
   }, [navigate]);
 
   if (loading) {
-    return <p>Loading...</p>;  // Show a loading indicator while checking authorization
+    return <div className="w-full h-[100vh] flex items-center justify-center"><p className="text-3xl text-center">Loading...</p></div>;  // Show a loading indicator while checking authorization
   }
 
   return isAuthorized ? children : null;

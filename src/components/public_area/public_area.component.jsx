@@ -8,6 +8,7 @@ import ContactPage from "../../pages/contact/contact.page";
 import ClientsPage from "../../pages/clients/clients.page";
 import PublicNotFoundPage from "../../pages/public_not_found/public_not_found.page";
 import AdminAuthPage from "../../pages/admin_auth/admin_auth.page";
+import CareersPage from "../../pages/careers/careers.page";
 
 // components
 import Footer from "../footer/footer.component";
@@ -27,6 +28,7 @@ const PublicArea = () => {
                 <Route path="/blogs" element={<BlogsPage />} />
                 <Route path="/blogs/:id" element={<BlogPage />} />
                 <Route path="/clients" element={<ClientsPage />} />
+                <Route path="/careers" element={<CareersPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/admin_auth" element={<AdminAuthPage />} />
 
